@@ -1,11 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { configureStore } from './store/configureStore';
+import BaseNavigation from './router';
 
-import Store from './Store';
-import BaseNavigation from './Router';
+const store = configureStore({});
 
 const App = () => (
-  <Provider store={Store}>
+  <Provider store={store}>
     <BaseNavigation />
   </Provider>
 );

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import BaseNavigation from '../Router';
+import BaseNavigation from '../router';
 
 export default combineReducers({
   navigation: (state, action) => BaseNavigation.router.getStateForAction(action, state),
