@@ -1,9 +1,15 @@
 import { StackNavigator } from 'react-navigation';
-
-import Main from './components/Main';
+import LoginScreen from './screens/login/LoginScreen';
+import DrawerNavigatorComponent from './components/drawerNavigator/DrawerNavigatorComponent';
 
 const BaseNavigation = StackNavigator({
-  Main: { screen: Main },
+  Login: { screen: LoginScreen },
+  DrawerNavigator: {
+    screen: DrawerNavigatorComponent,
+    navigationOptions: {
+      header: null,
+    },
+  },
 });
 
 export default BaseNavigation;

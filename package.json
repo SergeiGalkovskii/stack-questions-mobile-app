@@ -1,14 +1,22 @@
 {
-  "name": "StackQuestions",
-  "version": "0.0.1",
+  "name": "StackOverFlowQuestions",
+  "version": "0.1.0",
   "private": true,
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.2.0",
-    "react-native": "0.54.0",
+    "@expo/vector-icons": "^6.3.1",
+    "expo": "^27.0.1",
+    "native-base": "^2.8.0",
+    "react": "16.3.1",
+    "react-native": "~0.55.2",
+    "react-native-vector-icons": "^5.0.0",
     "react-navigation": "1.5.1",
     "react-redux": "5.0.7",
     "redux": "3.7.2",
@@ -18,14 +26,16 @@
     "babel-eslint": "8.2.2",
     "babel-jest": "22.4.1",
     "babel-preset-react-native": "4.0.0",
-    "eslint": "4.18.2",
+    "eslint": "^4.18.2",
     "eslint-config-airbnb": "16.1.0",
     "eslint-friendly-formatter": "3.0.0",
     "eslint-plugin-import": "2.9.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.7.0",
     "jest": "22.4.2",
-    "react-test-renderer": "16.2.0"
+    "jest-expo": "~27.0.0",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
   },
   "jest": {
     "preset": "react-native"
