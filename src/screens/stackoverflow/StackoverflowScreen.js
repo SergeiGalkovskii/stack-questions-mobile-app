@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import { Container, Content } from 'native-base';
-import WrapperNavigatorItemComponent from '../../components/WrapperNavigatorItem/WrapperNavigatorItemComponent';
+import WrapperNavigatorItemComponent from '../../components/wrapperNavigatorItem/WrapperNavigatorItemComponent';
 
 class StackoverflowScreen extends Component {
   render() {

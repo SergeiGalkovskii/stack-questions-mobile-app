@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Button, Text, Col } from 'native-base';
 import { withNavigation } from 'react-navigation';
-import WrapperNavigatorItemComponent from '../../components/WrapperNavigatorItem/WrapperNavigatorItemComponent';
+import WrapperNavigatorItemComponent from '../../components/wrapperNavigatorItem/WrapperNavigatorItemComponent';
 import styles from './styles';
 
 const screenTitle = 'Log Out';

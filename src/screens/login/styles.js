@@ -1,28 +1,27 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-
+  grid: {
+    padding: 40,
   },
-  inputContainer: {
-    padding: 20,
-    flexDirection: 'row',
-  },
-  iconContainer: {
-    flex: 0.1,
-    paddingRight: 10,
-    flexDirection: 'row',
+  welcomeCol: {
     justifyContent: 'flex-end',
     alignItems: 'center',
+    paddingVertical: 20,
   },
-  input: {
-    flex: 0.9,
-    paddingHorizontal: 4,
-    paddingVertical: 5,
-    height: 35,
-    borderWidth: 1,
-    borderColor: 'gray',
+  welcomeStr: {
+    fontSize: 25,
+  },
+  inputCol: {
+    justifyContent: 'space-around',
+    paddingVertical: 60,
+  },
+  submitButtonCol: {
+    alignItems: 'center',
+  },
+  submitButton: {
+    paddingHorizontal: 20,
+    alignSelf: 'center',
   },
 });
 
