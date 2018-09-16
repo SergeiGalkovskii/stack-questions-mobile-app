@@ -9,7 +9,9 @@ import styles from './styles';
 const hardCodedPassword = 'test1234';
 
 @connect(
-  null,
+  state => ({
+    userName: state.auth.userName,
+  }),
   dispatch => ({
     onInit: () => dispatch(initAuthAction()),
     onSubmit: data => dispatch(submitAuthAction(data))
@@ -31,6 +33,12 @@ class LoginScreen extends Component {
     this.props.onInit();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.userName !== this.props.userName) {
+      this.redirectToDrawerScreen();
+    }
+  }
+
   onSubmit = () => {
     if (this.checkUserName(this.state.userName) && this.checkPassword(this.state.password)) {
       this.setState(state => ({ ...state, isWrongUserName: true, isWrongPassword: true }));
@@ -44,11 +52,7 @@ class LoginScreen extends Component {
         userName: this.state.userName,
         password: this.state.password,
       });
-      const resetAction = NavigationActions.reset({
-        index: 0,
-        actions: [NavigationActions.navigate({ routeName: 'DrawerNavigator' })],
-      });
-      this.props.navigation.dispatch(resetAction);
+      this.redirectToDrawerScreen();
     }
   }
 
@@ -60,9 +64,18 @@ class LoginScreen extends Component {
     this.setState(state => ({ ...state, password: val }));
   }
 
+  redirectToDrawerScreen = () => {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'DrawerNavigator' })],
+    });
+    this.props.navigation.dispatch(resetAction);
+  }
+
   checkUserName = userNameValue => userNameValue.length <= 3;
 
   checkPassword = passwordValue => passwordValue !== hardCodedPassword;
+
   render() {
     return (
       <Container>
@@ -103,6 +116,7 @@ LoginScreen.propTypes = {
   onInit: PropTypes.func,
   onSubmit: PropTypes.func,
   navigation: PropTypes.object,
+  userName: PropTypes.string,
 };
 
 export default LoginScreen;
