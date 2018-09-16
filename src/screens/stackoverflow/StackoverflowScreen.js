@@ -4,7 +4,7 @@ import { Text, FlatList, ActivityIndicator, View } from 'react-native';
 import { Content, Col } from 'native-base';
 import { connect } from 'react-redux';
 import { getStackQuestionsDataAction } from '../../store/actions';
-import WrapperNavigatorItemComponent from '../../components/wrapperNavigatorItem/WrapperNavigatorItemComponent';
+import WrapperDrawerItemComponent from '../../components/wrapperDrawerItem/WrapperDrawerItemComponent';
 import styles from './styles';
 
 const screenTitle = 'StackOverFlow';
@@ -44,7 +44,7 @@ class StackoverflowScreen extends Component {
     }
 
     return (
-      <WrapperNavigatorItemComponent title={screenTitle}>
+      <WrapperDrawerItemComponent title={screenTitle}>
         <Content>
           <FlatList
             data={dataState.data}
@@ -53,7 +53,7 @@ class StackoverflowScreen extends Component {
             ItemSeparatorComponent={this.renderSeparator}
           />
         </Content>
-      </WrapperNavigatorItemComponent>
+      </WrapperDrawerItemComponent>
     );
   }
 }

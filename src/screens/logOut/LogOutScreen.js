@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Button, Text, Col } from 'native-base';
-import { withNavigation, StackActions, NavigationActions } from 'react-navigation';
-import WrapperNavigatorItemComponent from '../../components/wrapperNavigatorItem/WrapperNavigatorItemComponent';
+import { withNavigation, NavigationActions } from 'react-navigation';
+import WrapperDrawerItemComponent from '../../components/wrapperDrawerItem/WrapperDrawerItemComponent';
 import styles from './styles';
 
 const screenTitle = 'Log Out';
@@ -13,7 +13,7 @@ class LogOutScreen extends Component {
     };
 
     onClickButton = () => {
-      const resetAction = StackActions.reset({
+      const resetAction = NavigationActions.reset({
         index: 0,
         actions: [NavigationActions.navigate({ routeName: 'Login' })],
       });
@@ -22,7 +22,7 @@ class LogOutScreen extends Component {
 
     render() {
       return (
-        <WrapperNavigatorItemComponent title={screenTitle}>
+        <WrapperDrawerItemComponent title={screenTitle}>
           <Grid style={styles.container}>
             <Text style={styles.text}>Good Bye</Text>
             <Col style={styles.buttonCol}>
@@ -31,7 +31,7 @@ class LogOutScreen extends Component {
               </Button>
             </Col>
           </Grid>
-        </WrapperNavigatorItemComponent>
+        </WrapperDrawerItemComponent>
       );
     }
 }

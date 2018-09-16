@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
-import WrapperNavigatorItemComponent from '../../components/wrapperNavigatorItem/WrapperNavigatorItemComponent';
+import WrapperDrawerItemComponent from '../../components/wrapperDrawerItem/WrapperDrawerItemComponent';
 import styles from './styles';
 
 const screenTitle = 'Home';
@@ -19,11 +19,11 @@ class HomeScreen extends Component {
     } = this.props;
     const textContent = `Hello, ${userName}!`;
     return (
-      <WrapperNavigatorItemComponent title={screenTitle}>
+      <WrapperDrawerItemComponent title={screenTitle}>
         <Container style={styles.container}>
           <Text style={styles.text}>{textContent}</Text>
         </Container>
-      </WrapperNavigatorItemComponent >
+      </WrapperDrawerItemComponent >
     );
   }
 }

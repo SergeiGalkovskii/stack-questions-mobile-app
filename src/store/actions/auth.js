@@ -1,10 +1,8 @@
 /*eslint-disable */
 import { AsyncStorage } from 'react-native';
 import { AUTH_SUCCESS, AUTH_ERROR } from '../constants/auth';
-import { NavigationActions } from 'react-navigation';
 
 const dataKey = 'stack-app:userName';
-
 
 const authSuccessAction = payload => ({
     type: AUTH_SUCCESS,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Container, Left, Icon, Header, Body, Title, Right } from 'native-base';
 import { withNavigation } from 'react-navigation';
 
-class WrapperNavigatorItemComponent extends Component {
+class WrapperDrawerItemComponent extends Component {
     onClickIcon = () => {
       this.props.navigation.navigate('DrawerOpen');
     }
@@ -29,10 +29,10 @@ class WrapperNavigatorItemComponent extends Component {
     }
 }
 
-WrapperNavigatorItemComponent.propTypes = {
+WrapperDrawerItemComponent.propTypes = {
   title: PropTypes.string,
   navigation: PropTypes.object,
   children: PropTypes.node,
 };
 
-export default withNavigation(WrapperNavigatorItemComponent);
+export default withNavigation(WrapperDrawerItemComponent);
