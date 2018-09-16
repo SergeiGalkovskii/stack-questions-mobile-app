@@ -7,6 +7,7 @@ import BaseNavigation from './src/router';
 const Roboto = require('native-base/Fonts/Roboto.ttf');
 const RobotoMedium = require('native-base/Fonts/Roboto_medium.ttf');
 const Ionicons = require('native-base/Fonts/Ionicons.ttf');
+const FontAwesome = require('native-base/Fonts/FontAwesome.ttf');
 
 const store = configureStore({});
 
@@ -20,6 +21,7 @@ class App extends Component {
       Roboto,
       Roboto_medium: RobotoMedium,
       Ionicons,
+      FontAwesome,
     });
     this.setState((state, props) => ({ isLoading: false }));
   }
@@ -36,5 +38,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

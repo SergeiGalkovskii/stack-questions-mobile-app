@@ -1,25 +1,37 @@
 import { StyleSheet } from 'react-native';
+import { themeColor } from '../../assets/styles';
 
 const styles = StyleSheet.create({
   grid: {
-    padding: 40,
+    paddingHorizontal: 45,
+    paddingVertical: 20,
   },
   welcomeCol: {
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingVertical: 20,
   },
   welcomeStr: {
     fontSize: 25,
   },
+  inputRow: {
+    marginBottom: 40,
+  },
   inputCol: {
-    justifyContent: 'space-around',
-    paddingVertical: 60,
+    justifyContent: 'center',
+    paddingVertical: 42,
+  },
+  inputUserName: {
+    marginBottom: 10,
   },
   submitButtonCol: {
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  icon: {
+    color: themeColor,
+  },
   submitButton: {
+    backgroundColor: themeColor,
     paddingHorizontal: 20,
     alignSelf: 'center',
   },

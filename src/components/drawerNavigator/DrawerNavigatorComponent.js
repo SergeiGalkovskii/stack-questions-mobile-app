@@ -3,6 +3,7 @@ import HomeScreen from '../../screens/home/HomeScreen';
 import StackoverflowScreen from '../../screens/stackoverflow/StackoverflowScreen';
 import DrawerContentComponent from './DrawerContentComponent';
 import LogOut from '../../screens/logOut/LogOutScreen';
+import { themeColor } from '../../assets/styles';
 
 const DrawerNavigatorComponent = DrawerNavigator(
   {
@@ -19,6 +20,9 @@ const DrawerNavigatorComponent = DrawerNavigator(
   {
     initialRouteName: 'Home',
     contentComponent: DrawerContentComponent,
+    contentOptions: {
+      activeTintColor: themeColor,
+    },
     drawerPosition: 'left',
     drawerOpenRoute: 'DrawerOpen',
     drawerCloseRoute: 'DrawerClose',
