@@ -1,13 +1,10 @@
 /*eslint-disable */
 import { AsyncStorage } from 'react-native';
-import { INIT_AUTH, AUTH_SUCCESS, AUTH_ERROR } from '../constants/auth';
+import { AUTH_SUCCESS, AUTH_ERROR } from '../constants/auth';
+import { NavigationActions } from 'react-navigation';
 
 const dataKey = 'stack-app:userName';
-const passwordApp = 'test1234';
-// const initAuthAction = () => ({
-//     type: INIT_AUTH,
-//     payload
-// });
+
 
 const authSuccessAction = payload => ({
     type: AUTH_SUCCESS,
@@ -19,7 +16,7 @@ const authErrorAction = payload => ({
     payload
 });
 
-const initAuthAction = () => {
+export const initAuthAction = () => {
     return async (dispatch) => {
         try {
             const userName = await AsyncStorage.getItem(dataKey);
@@ -32,11 +29,11 @@ const initAuthAction = () => {
     }
 }
 
-const submitAuthAction = (data) => {
+export const submitAuthAction = (data) => {
     return async (dispatch) => {
         try {
             await AsyncStorage.setItem(dataKey, data.userName);
-            dispatch(authSuccessAction(userName));
+            dispatch(authSuccessAction(data.userName));
         } catch (e) {
             dispatch(authErrorAction(e));
         }
