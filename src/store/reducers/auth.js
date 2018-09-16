@@ -1,7 +1,7 @@
-import { AUTH_SUCCESS, AUTH_ERROR } from '../constants/auth';
+import { AUTH_SUCCESS, AUTH_ERROR, LOG_OUT_SUCCESS, LOG_OUT_ERROR } from '../constants/auth';
 
 const initState = {
-  userName: null,
+  userName: '',
   error: null,
 };
 
@@ -12,6 +12,12 @@ const authReducer = (state = initState, action) => {
     };
     case AUTH_ERROR: return {
       ...state, error: action.payload,
+    };
+    case LOG_OUT_SUCCESS: return {
+      ...state, userName: '',
+    };
+    case LOG_OUT_ERROR: return {
+      ...state, error: 'Something went wrong',
     };
     default: return state;
   }

@@ -34,7 +34,7 @@ class LoginScreen extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.userName !== this.props.userName) {
+    if (prevProps.userName !== this.props.userName && this.props.userName) {
       this.redirectToDrawerScreen();
     }
   }
@@ -85,21 +85,21 @@ class LoginScreen extends Component {
               <Text style={styles.welcomeStr}>Welcome</Text>
             </Col>
           </Row>
-          <Row size={1} >
+          <Row size={2} style={styles.inputRow}>
             <Col style={styles.inputCol}>
-              <Item error={this.state.isWrongUserName ? true : false}>
-                <Icon name="person" />
+              <Item error={this.state.isWrongUserName ? true : false} style={styles.inputUserName}>
+                <Icon name="person" style={styles.icon} />
                 <Input placeholder="username" value={this.state.userName} onChangeText={this.onChangeUserName} />
                 {this.state.isWrongUserName && (<Icon name="close-circle" />)}
               </Item>
               <Item error={this.state.isWrongPassword ? true : false}>
-                <Icon name="lock" />
+                <Icon name="lock" style={styles.icon} />
                 <Input placeholder="password" secureTextEntry value={this.state.password} onChangeText={this.onChangePassword} />
                 {this.state.isWrongPassword && (<Icon name="close-circle" />)}
               </Item>
             </Col>
           </Row>
-          <Row size={1}>
+          <Row size={2}>
             <Col style={styles.submitButtonCol}>
               <Button style={styles.submitButton} onPress={this.onSubmit}>
                 <Text>Log In</Text>
