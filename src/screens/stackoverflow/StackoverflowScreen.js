@@ -42,12 +42,13 @@ class StackoverflowScreen extends Component {
           <ActivityIndicator size="small" />
         </View>);
     }
+
     return (
       <WrapperNavigatorItemComponent title={screenTitle}>
         <Content>
           <FlatList
             data={dataState.data}
-            keyExtractor={(x, i) => i}
+            keyExtractor={item => item.title}
             renderItem={this.renderItem}
             ItemSeparatorComponent={this.renderSeparator}
           />

@@ -31,7 +31,7 @@ class WrapperNavigatorItemComponent extends Component {
 
 WrapperNavigatorItemComponent.propTypes = {
   title: PropTypes.string,
-  navigation: PropTypes.func,
+  navigation: PropTypes.object,
   children: PropTypes.node,
 };
 
