@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import { themeFontColor } from '../../assets/styles';
 
 const styles = StyleSheet.create({
@@ -10,20 +10,25 @@ const styles = StyleSheet.create({
   },
   header: {
     position: 'relative',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
     paddingHorizontal: 10,
+    paddingBottom: Platform.OS === 'ios' ? 10 : 0,
   },
   leftCont: {
+    paddingHorizontal: Platform.OS === 'ios' ? 10 : 0,
     flexDirection: 'row',
     alignItems: 'flex-end',
-    paddingHorizontal: 10,
     paddingVertical: 5,
   },
   stackIcon: {
-    paddingHorizontal: 5,
     color: themeFontColor,
+    height: Platform.OS === 'ios' ? 30 : 'auto',
+    marginRight: 5,
   },
   text: {
     color: themeFontColor,
+    width: 80,
     fontWeight: 'bold',
   },
 });
