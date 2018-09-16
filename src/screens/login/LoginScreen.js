@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Item, Icon, Input, Grid, Row, Col, Text, Button } from 'native-base';
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
+import { initAuthAction, submitAuthAction } from '../../store/actions';
 import styles from './styles';
 
 const hardCodedPassword = 'test1234';
 
+@connect(
+  null,
+  dispatch => ({
+    onInit: () => dispatch(initAuthAction()),
+    onSubmit: data => dispatch(submitAuthAction(data))
+  })
+)
 class LoginScreen extends Component {
   static navigationOptions = {
     header: null,
@@ -16,6 +27,10 @@ class LoginScreen extends Component {
     isWrongPassword: false,
   };
 
+  componentDidMount() {
+    this.props.onInit();
+  }
+
   onSubmit = () => {
     if (this.checkUserName(this.state.userName) && this.checkPassword(this.state.password)) {
       this.setState(state => ({ ...state, isWrongUserName: true, isWrongPassword: true }));
@@ -25,6 +40,15 @@ class LoginScreen extends Component {
       this.setState(state => ({ ...state, isWrongUserName: false, isWrongPassword: true }));
     } else {
       this.setState(state => ({ ...state, isWrongUserName: false, isWrongPassword: false }));
+      this.props.onSubmit({
+        userName: this.state.userName,
+        password: this.state.password,
+      });
+      const resetAction = NavigationActions.reset({
+        index: 0,
+        actions: [NavigationActions.navigate({ routeName: 'DrawerNavigator' })],
+      });
+      this.props.navigation.dispatch(resetAction);
     }
   }
 
@@ -74,5 +98,11 @@ class LoginScreen extends Component {
     );
   }
 }
+
+LoginScreen.propTypes = {
+  onInit: PropTypes.func,
+  onSubmit: PropTypes.func,
+  navigation: PropTypes.object,
+};
 
 export default LoginScreen;
