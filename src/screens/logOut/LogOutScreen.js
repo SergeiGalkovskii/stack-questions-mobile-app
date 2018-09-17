@@ -46,8 +46,8 @@ class LogOutScreen extends Component {
 }
 
 LogOutScreen.propTypes = {
-  navigation: PropTypes.object,
-  onLogOut: PropTypes.func,
+  navigation: PropTypes.object.isRequired,
+  onLogOut: PropTypes.func.isRequired,
 };
 
 export default withNavigation(LogOutScreen);

@@ -59,8 +59,8 @@ class StackoverflowScreen extends Component {
 }
 
 StackoverflowScreen.propTypes = {
-  dataState: PropTypes.object,
-  onGetData: PropTypes.func,
+  dataState: PropTypes.object.isRequired,
+  onGetData: PropTypes.func.isRequired,
 };
 
 export default StackoverflowScreen;

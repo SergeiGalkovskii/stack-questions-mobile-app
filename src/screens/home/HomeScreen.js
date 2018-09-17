@@ -29,7 +29,7 @@ class HomeScreen extends Component {
 }
 
 HomeScreen.propTypes = {
-  userName: PropTypes.string,
+  userName: PropTypes.string.isRequired,
 };
 
 export default HomeScreen;

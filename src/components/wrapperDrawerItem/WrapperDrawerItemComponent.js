@@ -31,9 +31,9 @@ class WrapperDrawerItemComponent extends Component {
 }
 
 WrapperDrawerItemComponent.propTypes = {
-  title: PropTypes.string,
-  navigation: PropTypes.object,
-  children: PropTypes.node,
+  title: PropTypes.string.isRequired,
+  navigation: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default withNavigation(WrapperDrawerItemComponent);
