@@ -41,13 +41,13 @@ class LoginScreen extends Component {
 
   onSubmit = () => {
     if (this.checkUserName(this.state.userName) && this.checkPassword(this.state.password)) {
-      this.setState(state => ({ ...state, isWrongUserName: true, isWrongPassword: true }));
+      this.setState({ isWrongUserName: true, isWrongPassword: true });
     } else if (this.checkUserName(this.state.userName)) {
-      this.setState(state => ({ ...state, isWrongUserName: true, isWrongPassword: false }));
+      this.setState({ isWrongUserName: true, isWrongPassword: false });
     } else if (this.checkPassword(this.state.password)) {
-      this.setState(state => ({ ...state, isWrongUserName: false, isWrongPassword: true }));
+      this.setState({ isWrongUserName: false, isWrongPassword: true });
     } else {
-      this.setState(state => ({ ...state, isWrongUserName: false, isWrongPassword: false }));
+      this.setState({ isWrongUserName: false, isWrongPassword: false });
       this.props.onSubmit({
         userName: this.state.userName,
         password: this.state.password,
@@ -57,11 +57,11 @@ class LoginScreen extends Component {
   }
 
   onChangeUserName = (val) => {
-    this.setState(state => ({ ...state, userName: val }));
+    this.setState({ userName: val });
   }
 
   onChangePassword = (val) => {
-    this.setState(state => ({ ...state, password: val }));
+    this.setState({ password: val });
   }
 
   redirectToDrawerScreen = () => {
