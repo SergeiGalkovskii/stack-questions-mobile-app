@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import { Font, AppLoading } from 'expo';
-import { Provider } from 'react-redux';
-import configureStore from './src/store/configureStore';
-import BaseNavigation from './src/router';
+import React, { Component } from "react";
+import { Font, AppLoading } from "expo";
+import { Provider } from "react-redux";
+import { Root } from "native-base";
+import configureStore from "./src/store/configureStore";
+import BaseNavigation from "./src/router";
 
-const Roboto = require('native-base/Fonts/Roboto.ttf');
-const RobotoMedium = require('native-base/Fonts/Roboto_medium.ttf');
-const Ionicons = require('native-base/Fonts/Ionicons.ttf');
-const FontAwesome = require('native-base/Fonts/FontAwesome.ttf');
+const Roboto = require("native-base/Fonts/Roboto.ttf");
+const RobotoMedium = require("native-base/Fonts/Roboto_medium.ttf");
+const Ionicons = require("native-base/Fonts/Ionicons.ttf");
+const FontAwesome = require("native-base/Fonts/FontAwesome.ttf");
+const Entypo = require("native-base/Fonts/Entypo.ttf");
 
 const store = configureStore({});
 
 class App extends Component {
   state = {
-    isLoading: true,
+    isLoading: true
   };
 
   async componentWillMount() {
@@ -22,6 +24,7 @@ class App extends Component {
       Roboto_medium: RobotoMedium,
       Ionicons,
       FontAwesome,
+      Entypo
     });
     this.setState((state, props) => ({ isLoading: false }));
   }
@@ -33,11 +36,12 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <BaseNavigation />
+        <Root>
+          <BaseNavigation />
+        </Root>
       </Provider>
     );
   }
 }
-
 
 export default App;

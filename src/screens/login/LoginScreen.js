@@ -113,10 +113,12 @@ class LoginScreen extends Component {
 }
 
 LoginScreen.propTypes = {
-  onInit: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  navigation: PropTypes.object.isRequired,
-  userName: PropTypes.string.isRequired,
+  onInit: PropTypes.func,
+  onSubmit: PropTypes.func,
+  navigation: PropTypes.object,
+  userName: PropTypes.string,
 };
+
+
 
 export default LoginScreen;
